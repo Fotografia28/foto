@@ -10,8 +10,11 @@ export default function HeroPost({
   excerpt,
   author,
   slug,
-}) {
+})
+{
+  console.log(slug)
   return (
+
     <section>
       <div className="mb-8 md:mb-16">
         {coverImage && (
