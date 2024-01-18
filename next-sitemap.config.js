@@ -1,10 +1,10 @@
 module.exports = {
-  siteUrl: 'https://www.fotoestudioequipe.com.br',
-  // generateRobotsTxt: true, // opcional
-  priority: null,
-  changefreq: null,
-  exclude: ['/server-sitemap-index.xml', '/post/*'],
+  siteUrl: 'https://fotostudioequipe.com.br',
+  generateRobotsTxt: true,
+  exclude: ['/server-sitemap.xml'], // <= exclude here
   robotsTxtOptions: {
-    additionalSitemaps: ['https://www.fotostudioequipe.com.br/server-sitemap-index.xml'],
+    additionalSitemaps: [
+      'https://fotostudioequipe.com.br/server-sitemap.xml', // <==== Add here
+    ],
   },
 }
