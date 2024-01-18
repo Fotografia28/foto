@@ -1,4 +1,4 @@
-import { getServerSideSitemap } from 'next-sitemap'
+import { getServerSideSitemapIndex  } from 'next-sitemap'
 import { GetServerSideProps } from 'next'
 import { getAllPostsForHome } from '../../lib/api'
 
@@ -20,7 +20,9 @@ export const getServerSideProps: any = async (ctx) => {
     // priority
   }))
 
-  return getServerSideSitemap(ctx, fields)
+  console.log(fields)
+
+  return getServerSideSitemapIndex([fields])
 }
 
 // Default export to prevent next.js errors
