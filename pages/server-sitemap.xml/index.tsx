@@ -8,8 +8,13 @@ export const getServerSideProps: any = async (ctx) => {
 
   // Vou criar um fields, onde busco o slug da minha resposta
   // E com o slug vou preenchendo dinamicamente cada post que tenho
-  const fields = allPosts.data.map(({ slug }) => ({
-    loc: `https://www.fotostudioequipe.com.br/${slug}`,
+  const posts = allPosts.edges
+
+
+  const fields = posts.map(( slug ) => (
+    console.log(slug.node.title),
+    {
+    loc: `https://www.fotostudioequipe.com.br/${slug.node.title}`,
     lastmod: new Date().toISOString(),
     // changefreq
     // priority
