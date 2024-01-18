@@ -1,5 +1,4 @@
 import { getServerSideSitemapIndex  } from 'next-sitemap'
-import { GetServerSideProps } from 'next'
 import { getAllPostsForHome } from '../../lib/api'
 
 export const getServerSideProps: any = async (ctx) => {
