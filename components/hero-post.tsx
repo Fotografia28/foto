@@ -12,7 +12,6 @@ export default function HeroPost({
   slug,
 })
 {
-  console.log(slug)
   return (
 
     <section>

@@ -32,9 +32,10 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <meta name="robots" content="index" />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        content={`Fotografia estúdio, ensaios fotográficos, cobertura de eventos, premiações e muito mais, confira disponibilidade de um fotógrafo perto de você`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
