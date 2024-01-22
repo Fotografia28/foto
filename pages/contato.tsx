@@ -22,7 +22,7 @@ export default function Page() {
           <form>
             <input type="label" placeholder="Email"/>
             <input type="label" placeholder="Telefone"/>
-            <textarea placeholder="Telefone"/>
+            <textarea placeholder="Mensagem"/>
           </form>
 
         </div>

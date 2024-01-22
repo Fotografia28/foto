@@ -18,9 +18,9 @@ export default function Menu() {
             <Link href="/">
               <li>Inicio</li>
             </Link>
-            <Link href="/">
+            {/* <Link href="/">
               <li>Contato</li>
-            </Link>
+            </Link> */}
             <Link href="/contato">
               <li>Contato</li>
             </Link>
