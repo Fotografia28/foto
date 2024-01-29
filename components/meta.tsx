@@ -35,11 +35,7 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="robots" content="index" />
-      {/* <meta
-        name="description"
-        content={`Fotografia estúdio, ensaios fotográficos, cobertura de eventos, premiações e muito mais, confira disponibilidade de um fotógrafo perto de você`}
-      /> */}
-      {/* <meta  */}
+  
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   )
