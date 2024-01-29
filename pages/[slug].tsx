@@ -26,9 +26,7 @@ export default function Post({ post, posts, preview, head, seo }) {
 
   return (
     <Layout preview={preview}>
-      <Head>
-        <meta name="description" content={seo.metaDesc} />
-      </Head>
+
       <Container>
         <Header />
         {router?.isFallback ? (
