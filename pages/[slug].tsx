@@ -27,6 +27,9 @@ export default function Post({ post, posts, preview, head, seo }) {
 
   const a:string = seo.canonical
 
+
+  
+
   return (
     <Layout preview={preview}>
       <Head>
