@@ -24,15 +24,16 @@ export default function Post({ post, posts, preview, head, seo }) {
     }
   });
 
-
-  const a:string = seo.canonical
+  const a: string = seo.canonical;
 
   return (
     <Layout preview={preview}>
+      {`   
       <Head>
         <meta name="description" content={seo.metaDesc} />
-        <link href="canonical" href={`${a}`}/>
+        <link rel="canonical" href="${seo.slug}" />  
       </Head>
+      `}
       <Container>
         <Header />
         {router?.isFallback ? (
