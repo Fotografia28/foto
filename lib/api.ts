@@ -44,6 +44,7 @@ export async function getPreviewPost(id, idType = "DATABASE_ID") {
   return data.post;
 }
 
+
 export async function getAllPostsWithSlug() {
   const data = await fetchAPI(`
     {
@@ -52,7 +53,9 @@ export async function getAllPostsWithSlug() {
           node {
             slug
             seo {
-              metaDesc
+              metaDesc,
+              metaKeywords,
+              canonical
             }
           }
         }
@@ -103,8 +106,6 @@ export async function getAllPostsForHome(preview) {
 
   return data?.posts;
 }
-
-
 
 export async function getPostAndMorePosts(slug, preview, previewData) {
   const postPreview = preview && previewData?.post;
