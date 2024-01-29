@@ -25,41 +25,45 @@ export default function Post({ post, posts, preview, head, seo }) {
   });
 
   return (
-    <Layout preview={preview}>
-
-      <Container>
-        <Header />
-        {router?.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article>
-              <Head>
-                <title>{`${post?.title}`}</title>
-                <meta
-                  property="og:image"
-                  content={post?.featuredImage.node.sourceUrl}
+    <>
+      <Head>
+        <meta name="description" content={seo.metaDesc} />
+      </Head>
+      <Layout preview={preview}>
+        <Container>
+          <Header />
+          {router?.isFallback ? (
+            <PostTitle>Loading…</PostTitle>
+          ) : (
+            <>
+              <article>
+                <Head>
+                  <title>{`${post?.title}`}</title>
+                  <meta
+                    property="og:image"
+                    content={post?.featuredImage.node.sourceUrl}
+                  />
+                </Head>
+                <PostHeader
+                  title={post?.title}
+                  coverImage={post?.featuredImage}
+                  date={post?.date}
+                  author={post?.author}
+                  categories={post?.categories}
                 />
-              </Head>
-              <PostHeader
-                title={post?.title}
-                coverImage={post?.featuredImage}
-                date={post?.date}
-                author={post?.author}
-                categories={post?.categories}
-              />
-              <PostBody content={post?.content} />
-              <footer>
-                {post?.tags.edges.length > 0 && <Tags tags={post?.tags} />}
-              </footer>
-            </article>
+                <PostBody content={post?.content} />
+                <footer>
+                  {post?.tags.edges.length > 0 && <Tags tags={post?.tags} />}
+                </footer>
+              </article>
 
-            <SectionSeparator />
-            {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
-          </>
-        )}
-      </Container>
-    </Layout>
+              <SectionSeparator />
+              {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
+            </>
+          )}
+        </Container>
+      </Layout>
+    </>
   );
 }
 
