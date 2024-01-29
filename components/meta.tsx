@@ -4,6 +4,8 @@ import { getAllPostsWithSlug, getPostAndMorePosts } from "./../lib/api";
 import { GetStaticProps } from "next";
 
 export default function Meta(seo) {
+
+  // console.log(seo, "seo")
   return (
     <Head>
       <link
@@ -35,35 +37,8 @@ export default function Meta(seo) {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="robots" content="index" />
-      <link rel="canonical" content={seo.canonical}/>
-
-      <meta name="description" content={seo.metaDesc} />
 
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   );
 }
-
-export const getStaticProps: GetStaticProps = async ({
-  params,
-  preview = false,
-  previewData,
-}) => {
-  const data = await getPostAndMorePosts(params?.slug, preview, previewData);
-  const allPost = await getAllPostsWithSlug();
-
-  const { node } = allPost?.edges.find(
-    (post) => post.node.slug == data.post.slug
-  );
-  const seo = node.seo;
-
-  return {
-    props: {
-      preview,
-      seo: seo,
-      post: data.post,
-      posts: data.posts,
-    },
-    revalidate: 10,
-  };
-};

@@ -24,6 +24,8 @@ export default function Post({ post, posts, preview, head, seo }) {
     }
   });
 
+  console.log(seo.description)
+
   return (
     <>
   
@@ -37,6 +39,8 @@ export default function Post({ post, posts, preview, head, seo }) {
               <article>
                 <Head>
                   <title>{`${post?.title}`}</title>
+                  <link rel="canonical" href={seo.canonical} />
+                  <meta name="description" content={seo?.description} />
                   <meta
                     property="og:image"
                     content={post?.featuredImage.node.sourceUrl}
