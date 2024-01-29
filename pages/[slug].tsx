@@ -24,16 +24,10 @@ export default function Post({ post, posts, preview, head, seo }) {
     }
   });
 
-
-  const a:string = seo.canonical
-
-  console.log(a)
-
   return (
     <Layout preview={preview}>
       <Head>
         <meta name="description" content={seo.metaDesc} />
-        {`<link rel="canonical" href="${a}"`}
       </Head>
       <Container>
         <Header />
