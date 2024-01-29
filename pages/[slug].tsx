@@ -26,9 +26,7 @@ export default function Post({ post, posts, preview, head, seo }) {
 
   return (
     <>
-      <Head>
-        <meta name="description" content={seo.metaDesc} />
-      </Head>
+  
       <Layout preview={preview}>
         <Container>
           <Header />
