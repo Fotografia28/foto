@@ -24,8 +24,8 @@ export default function Post({ post, posts, preview, head, seo }) {
     }
   });
 
-  const canonical = seo.canonical || "d"
-  const description = seo.description || "a"
+  // const canonical = seo.canonical || "d"
+  const description = seo.description || "a";
 
   return (
     <>
@@ -42,9 +42,8 @@ export default function Post({ post, posts, preview, head, seo }) {
                   {/* {seo.canonical && (
                     <link rel="canonical" href={canonical} />
                   )} */}
-                  {seo.description && (
-                    <meta name="description" content={description} />
-                  )}
+
+                  <meta name="description" content={description} />
                   <meta
                     property="og:image"
                     content={post?.featuredImage.node.sourceUrl}
