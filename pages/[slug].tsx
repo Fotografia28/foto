@@ -39,9 +39,9 @@ export default function Post({ post, posts, preview, head, seo }) {
               <article>
                 <Head>
                   <title>{`${post?.title}`}</title>
-                  {seo.canonical && (
+                  {/* {seo.canonical && (
                     <link rel="canonical" href={canonical} />
-                  )}
+                  )} */}
                   {seo.description && (
                     <meta name="description" content={description} />
                   )}
