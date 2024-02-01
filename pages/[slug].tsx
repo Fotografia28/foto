@@ -36,6 +36,7 @@ export default function Post({ post, posts, preview, head, seo }) {
             <PostTitle>Loading…</PostTitle>
           ) : (
             <>
+            
               <article>
                 <Head>
                   <title>{`${post?.description}`}</title>
