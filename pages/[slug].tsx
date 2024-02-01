@@ -36,7 +36,7 @@ export default function Post({ post, posts, preview, head, seo }) {
             <PostTitle>Loading…</PostTitle>
           ) : (
             <>
-            
+
               <article>
                 <Head>
                   <title>{`${post?.description}`}</title>
@@ -48,6 +48,7 @@ export default function Post({ post, posts, preview, head, seo }) {
                     property="og:image"
                     content={post?.featuredImage.node.sourceUrl}
                   />
+                  
                 </Head>
                 <PostHeader
                   title={post?.title}
