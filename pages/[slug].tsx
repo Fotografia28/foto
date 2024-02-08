@@ -18,11 +18,11 @@ import { useEffect } from "react";
 export default function Post({ post, posts, preview, head, seo }) {
   const router = useRouter();
   const morePosts = posts?.edges;
-  useEffect(() => {
-    if (!post?.slug) {
-      window.location.href = "/404";
-    }
-  });
+  // useEffect(() => {
+  //   if (!post?.slug) {
+  //     window.location.href = "/404";
+  //   }
+  // });
 
   console.log(seo)
 
