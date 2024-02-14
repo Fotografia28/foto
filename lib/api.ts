@@ -53,9 +53,11 @@ export async function getAllPostsWithSlug() {
           node {
             slug
             seo {
-              metaDesc,
-              metaKeywords,
-              canonical
+              metaDesc
+              metaKeywords
+              metaRobotsNofollow
+              metaRobotsNoindex
+              opengraphTitle
             }
           }
         }

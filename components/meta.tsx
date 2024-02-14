@@ -5,7 +5,6 @@ import { GetStaticProps } from "next";
 
 export default function Meta(seo) {
 
-  // console.log(seo, "seo")
   return (
     <Head>
       <link

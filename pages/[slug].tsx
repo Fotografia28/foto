@@ -18,17 +18,7 @@ import { useEffect } from "react";
 export default function Post({ post, posts, preview, head, seo }) {
   const router = useRouter();
   const morePosts = posts?.edges;
-  // useEffect(() => {
-  //   if (!post?.slug) {
-  //     window.location.href = "/404";
-  //   }
-  // });
 
-  console.log(seo)
-
-  // const canonical = seo.canonical || "d"
-  // const description = seo.description || "a";
-  //
   return (
     <>
       <Layout preview={preview}>
@@ -38,19 +28,19 @@ export default function Post({ post, posts, preview, head, seo }) {
             <PostTitle>Loading…</PostTitle>
           ) : (
             <>
-
               <article>
                 <Head>
                   <title>{`${post?.title}`}</title>
 
-                  <link rel="canonical" href={seo?.canonical} />
-
+                  <link rel="canonical" href={seo?.opengraphTitle} />
+                  <meta name="googlebot" content={seo?.metaRobotsNoindex} />
+                  <meta name="googlebot-news" content="snippet" />
+                  <meta name="keywords" content={seo?.metaKeywords} />
                   <meta name="description" content={seo?.metaDesc} />
                   <meta
                     property="og:image"
                     content={post?.featuredImage.node.sourceUrl}
                   />
-
                 </Head>
                 <PostHeader
                   title={post?.title}
